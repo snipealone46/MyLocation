@@ -13,6 +13,7 @@
 		0730EB201BFE32550003900D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0730EB1E1BFE32550003900D /* Main.storyboard */; };
 		0730EB221BFE32550003900D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0730EB211BFE32550003900D /* Assets.xcassets */; };
 		0730EB251BFE32550003900D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0730EB231BFE32550003900D /* LaunchScreen.storyboard */; };
+		078B58041C042ED400DE6622 /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078B58031C042ED400DE6622 /* LocationDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		0730EB211BFE32550003900D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0730EB241BFE32550003900D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0730EB261BFE32550003900D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		078B58031C042ED400DE6622 /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				0730EB211BFE32550003900D /* Assets.xcassets */,
 				0730EB231BFE32550003900D /* LaunchScreen.storyboard */,
 				0730EB261BFE32550003900D /* Info.plist */,
+				078B58031C042ED400DE6622 /* LocationDetailsViewController.swift */,
 			);
 			path = MyLocations;
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				078B58041C042ED400DE6622 /* LocationDetailsViewController.swift in Sources */,
 				0730EB1D1BFE32550003900D /* SecondViewController.swift in Sources */,
 				0730EB191BFE32550003900D /* AppDelegate.swift in Sources */,
 				0730EB1B1BFE32550003900D /* CurrentLocatoinViewController.swift in Sources */,
@@ -289,6 +293,7 @@
 				0730EB2B1BFE32550003900D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
