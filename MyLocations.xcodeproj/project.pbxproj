@@ -14,6 +14,7 @@
 		0730EB221BFE32550003900D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0730EB211BFE32550003900D /* Assets.xcassets */; };
 		0730EB251BFE32550003900D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0730EB231BFE32550003900D /* LaunchScreen.storyboard */; };
 		078B58041C042ED400DE6622 /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078B58031C042ED400DE6622 /* LocationDetailsViewController.swift */; };
+		078B58061C05529F00DE6622 /* CategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078B58051C05529F00DE6622 /* CategoryPickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		0730EB241BFE32550003900D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0730EB261BFE32550003900D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		078B58031C042ED400DE6622 /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
+		078B58051C05529F00DE6622 /* CategoryPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryPickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				0730EB231BFE32550003900D /* LaunchScreen.storyboard */,
 				0730EB261BFE32550003900D /* Info.plist */,
 				078B58031C042ED400DE6622 /* LocationDetailsViewController.swift */,
+				078B58051C05529F00DE6622 /* CategoryPickerViewController.swift */,
 			);
 			path = MyLocations;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 				078B58041C042ED400DE6622 /* LocationDetailsViewController.swift in Sources */,
 				0730EB1D1BFE32550003900D /* SecondViewController.swift in Sources */,
 				0730EB191BFE32550003900D /* AppDelegate.swift in Sources */,
+				078B58061C05529F00DE6622 /* CategoryPickerViewController.swift in Sources */,
 				0730EB1B1BFE32550003900D /* CurrentLocatoinViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
