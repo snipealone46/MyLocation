@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+
 //globes always lazy
 private let dateFormatter: NSDateFormatter = {
     let formatter = NSDateFormatter()
@@ -26,7 +27,12 @@ class LocationDetailsViewController: UITableViewController {
     @IBOutlet weak var dateLabel: UILabel!
     
     @IBAction func done() {
-        dismissViewControllerAnimated(true, completion: nil)
+        let hudView = HudView.hudInView(navigationController!.view, animated: true)
+        
+        hudView.text = "Tagged"
+        afterDelay(0.6) {
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }//you can put a closure behind a function call if it is the last parameter
     }
     
     @IBAction func cancel() {
