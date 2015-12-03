@@ -31,6 +31,22 @@ class LocationDetailsViewController: UITableViewController {
         let hudView = HudView.hudInView(navigationController!.view, animated: true)
         
         hudView.text = "Tagged"
+        
+        //save data to core data
+        let location = NSEntityDescription.insertNewObjectForEntityForName("Location", inManagedObjectContext: managedObjectContext) as! Location
+        
+        location.locationDescription = descriptionTextView.text
+        location.category = categoryName
+        location.latitude = coordinate.latitude
+        location.longitude = coordinate.longitude
+        location.date = date
+        location.placemark = placemark
+        
+        do{
+            try managedObjectContext.save()
+        } catch {
+            fatalCoreDataError(error)
+        }
         afterDelay(0.6) {
             self.dismissViewControllerAnimated(true, completion: nil)
         }//you can put a closure behind a function call if it is the last parameter
@@ -49,6 +65,7 @@ class LocationDetailsViewController: UITableViewController {
     var coordinate = CLLocationCoordinate2D(latitude: 0, longitude: 0)
     var placemark: CLPlacemark?
     var categoryName = "No Category"
+    var date = NSDate()
     var managedObjectContext: NSManagedObjectContext!
     
     override func viewDidLoad() {
@@ -64,7 +81,7 @@ class LocationDetailsViewController: UITableViewController {
             addressLabel.text = "No Adress Found"
         }
         
-        dateLabel.text = formatDate(NSDate())
+        dateLabel.text = formatDate(date)
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: "hideKeyboard:")
         gestureRecognizer.cancelsTouchesInView = false
         tableView.addGestureRecognizer(gestureRecognizer)
