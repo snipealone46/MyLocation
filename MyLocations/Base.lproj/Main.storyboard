@@ -95,7 +95,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="688" y="-309"/>
+            <point key="canvasLocation" x="400" y="-345"/>
         </scene>
         <!--Locations-->
         <scene sceneID="vaI-aI-yKr">
@@ -204,6 +204,9 @@
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
+                                <connections>
+                                    <outlet property="delegate" destination="pCb-Sb-NtW" id="bMa-gx-etN"/>
+                                </connections>
                             </navigationBar>
                         </subviews>
                         <animations/>
@@ -212,6 +215,7 @@
                     <tabBarItem key="tabBarItem" title="Map" id="YKo-79-cgY"/>
                     <connections>
                         <outlet property="mapView" destination="Nus-Mc-wEZ" id="n19-uq-QQP"/>
+                        <segue destination="hyf-qa-Vax" kind="modal" identifier="EditLocation" id="Xbd-FY-NZC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pw9-C9-gG0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -452,7 +456,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eWM-r6-pgQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2168" y="0.0"/>
+            <point key="canvasLocation" x="2186" y="403"/>
         </scene>
         <!--Category Picker View Controller-->
         <scene sceneID="IYC-gh-Uh8">
@@ -465,7 +469,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="L0T-wM-c8m" style="IBUITableViewCellStyleDefault" id="vhX-s9-xaT">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vhX-s9-xaT" id="4iY-pa-X1Q">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -498,7 +502,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kcq-Ip-R5e" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="86O-Qe-BrN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2642" y="0.0"/>
+            <point key="canvasLocation" x="2660" y="403"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -519,7 +523,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-76" y="41"/>
+            <point key="canvasLocation" x="-92" y="403"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gsZ-ER-yv8">
@@ -538,13 +542,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K72-zr-YGM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1636" y="0.0"/>
+            <point key="canvasLocation" x="1654" y="403"/>
         </scene>
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MW2-5S-gBS"/>
+        <segue reference="Xbd-FY-NZC"/>
     </inferredMetricsTieBreakers>
 </document>

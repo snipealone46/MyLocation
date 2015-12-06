@@ -34,8 +34,9 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NSFetchedResultsController.deleteCacheWithName("Locations")
-        NSFetchedResultsController.deleteCacheWithName("mapLocations")
+        //potential bug with core data, fix below two lines
+        //NSFetchedResultsController.deleteCacheWithName("Locations")
+        //NSFetchedResultsController.deleteCacheWithName("mapLocations")
         updateLocations()
         
         if !locations.isEmpty {
@@ -72,7 +73,9 @@ class MapViewController: UIViewController {
     deinit {
         fetchedResultsController.delegate = nil
     }
-    
+    func showLocationDetails(sender: UIButton) {
+        performSegueWithIdentifier("EditLocation", sender: sender)
+    }
     func regionForAnnotations(annotations: [MKAnnotation]) -> MKCoordinateRegion {
         var region: MKCoordinateRegion
         
@@ -104,10 +107,56 @@ class MapViewController: UIViewController {
         }
         return mapView.regionThatFits(region)
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "EditLocation" {
+            let navigationController = segue.destinationViewController as! UINavigationController
+            let controller = navigationController.topViewController as! LocationDetailsViewController
+            
+            controller.managedObjectContext = managedObjectContext
+            
+            let button = sender as! UIButton
+            let location = locations[button.tag]
+            controller.locationToEdit = location
+        }
+    }
+}
+
+extension MapViewController: UINavigationBarDelegate {
+    func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
+        return .TopAttached
+    }
 }
 
 extension MapViewController: MKMapViewDelegate {
-    
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        guard annotation is Location else {
+            return nil
+        }
+        //ask the mapView to re-use an annotation view object. If it cannot find a recyclable annotation view, then you create a new one.
+        let identifier = "Location"
+        var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier) as! MKPinAnnotationView!
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView.enabled = true
+            annotationView.canShowCallout = true
+            annotationView.animatesDrop = false
+            annotationView.pinTintColor = UIColor(red: 0.32, green: 0.82, blue: 0.4, alpha: 1)
+            //create a new UIButton object that looks like a detail disclosure button
+            let rightButton = UIButton(type: .DetailDisclosure)
+            rightButton.addTarget(self, action: Selector("showLocationDetails:"), forControlEvents: .TouchUpInside)
+            annotationView.rightCalloutAccessoryView = rightButton
+        } else {
+            annotationView.annotation = annotation
+        }
+        //obtain a reference to that detail disclosure button again and set its tag to the index of the Location object in the locations array.
+        let button = annotationView.rightCalloutAccessoryView as! UIButton
+        if let index = locations.indexOf(annotation as! Location) {
+            button.tag = index
+        }
+        return annotationView
+    }
 }
 //listen for the change and update the annotations
 extension MapViewController: NSFetchedResultsControllerDelegate {
