@@ -32,6 +32,8 @@ class LocationsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NSFetchedResultsController.deleteCacheWithName("Locations")
+        NSFetchedResultsController.deleteCacheWithName("mapLocations")
         performFetch()
         //use edit button to edit 
         navigationItem.rightBarButtonItem = editButtonItem()

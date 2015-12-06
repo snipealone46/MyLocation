@@ -10,6 +10,8 @@
 		070897351C0FC8D70024EC4B /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 070897331C0FC8D70024EC4B /* DataModel.xcdatamodeld */; };
 		070897381C0FC9AC0024EC4B /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070897361C0FC9AC0024EC4B /* Location+CoreDataProperties.swift */; };
 		070897391C0FC9AC0024EC4B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070897371C0FC9AC0024EC4B /* Location.swift */; };
+		070C4DD41C14404E00C75CDE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 070C4DD31C14404E00C75CDE /* MapKit.framework */; };
+		070C4DD61C14409E00C75CDE /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070C4DD51C14409E00C75CDE /* MapViewController.swift */; };
 		071076821C114785002484F4 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071076811C114785002484F4 /* LocationsViewController.swift */; };
 		0730EB191BFE32550003900D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0730EB181BFE32550003900D /* AppDelegate.swift */; };
 		0730EB1B1BFE32550003900D /* CurrentLocatoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0730EB1A1BFE32550003900D /* CurrentLocatoinViewController.swift */; };
@@ -28,6 +30,8 @@
 		070897341C0FC8D70024EC4B /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		070897361C0FC9AC0024EC4B /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		070897371C0FC9AC0024EC4B /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		070C4DD31C14404E00C75CDE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		070C4DD51C14409E00C75CDE /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		071076811C114785002484F4 /* LocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
 		0730EB151BFE32550003900D /* MyLocations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLocations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0730EB181BFE32550003900D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				070C4DD41C14404E00C75CDE /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +63,7 @@
 		0730EB0C1BFE32550003900D = {
 			isa = PBXGroup;
 			children = (
+				070C4DD31C14404E00C75CDE /* MapKit.framework */,
 				070897361C0FC9AC0024EC4B /* Location+CoreDataProperties.swift */,
 				070897371C0FC9AC0024EC4B /* Location.swift */,
 				0730EB171BFE32550003900D /* MyLocations */,
@@ -90,6 +96,7 @@
 				0730EB1C1BFE32550003900D /* SecondViewController.swift */,
 				071076811C114785002484F4 /* LocationsViewController.swift */,
 				07574EED1C135C64000B4D79 /* LocationCell.swift */,
+				070C4DD51C14409E00C75CDE /* MapViewController.swift */,
 			);
 			path = MyLocations;
 			sourceTree = "<group>";
@@ -172,6 +179,7 @@
 				0730EB1D1BFE32550003900D /* SecondViewController.swift in Sources */,
 				071076821C114785002484F4 /* LocationsViewController.swift in Sources */,
 				07AFD13B1C0EA0EE0048BE9A /* HudView.swift in Sources */,
+				070C4DD61C14409E00C75CDE /* MapViewController.swift in Sources */,
 				07574EEE1C135C64000B4D79 /* LocationCell.swift in Sources */,
 				07AFD13D1C0EBF910048BE9A /* Functions.swift in Sources */,
 				070897381C0FC9AC0024EC4B /* Location+CoreDataProperties.swift in Sources */,
