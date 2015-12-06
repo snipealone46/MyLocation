@@ -16,15 +16,15 @@ class LocationsViewController: UITableViewController {
         let fetchRequest = NSFetchRequest()
         let entity = NSEntityDescription.entityForName("Location", inManagedObjectContext: self.managedObjectContext)
         fetchRequest.entity = entity
-        
-        let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
-        fetchRequest.sortDescriptors = [sortDescriptor]
+        let sortDescriptor1 = NSSortDescriptor(key: "category", ascending: true)
+        let sortDescriptor2 = NSSortDescriptor(key: "date", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor1, sortDescriptor2]
         //set the fetchBatchSize better use of ram
         fetchRequest.fetchBatchSize = 20
         
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
             managedObjectContext: self.managedObjectContext,
-            sectionNameKeyPath: nil, cacheName: "Locations")
+            sectionNameKeyPath: "category", cacheName: "Locations")
         
         fetchedResultsController.delegate = self
         return fetchedResultsController
@@ -61,6 +61,9 @@ class LocationsViewController: UITableViewController {
         fetchedResultsController.delegate = nil
     }
     //MARK: - UITableViewDataSource
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return fetchedResultsController.sections!.count
+    }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let sectionInfo = fetchedResultsController.sections![section]
@@ -81,6 +84,10 @@ class LocationsViewController: UITableViewController {
         }
     }
     
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let sectionInfo = fetchedResultsController.sections![section]
+        return sectionInfo.name
+    }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("LocationCell", forIndexPath: indexPath) as! LocationCell
         //load indivisual location
