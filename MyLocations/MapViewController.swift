@@ -38,10 +38,11 @@ class MapViewController: UIViewController {
         //NSFetchedResultsController.deleteCacheWithName("Locations")
         //NSFetchedResultsController.deleteCacheWithName("mapLocations")
         updateLocations()
-        
+
         if !locations.isEmpty {
             showLocations()
         }
+
     }
     
     func updateLocations() {
@@ -67,6 +68,9 @@ class MapViewController: UIViewController {
     
     @IBAction func showLocations() {
         let region = regionForAnnotations(locations)
+        print("******************************")
+        print(region)
+        print("******************************")
         mapView.setRegion(region, animated: true)
     }
     //when MapViewController is destroyed, the fetchResultsController goes with it

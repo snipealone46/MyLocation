@@ -16,6 +16,8 @@ class CurrentLocatoinViewController: UIViewController, CLLocationManagerDelegate
         super.viewDidLoad()
         updateLabels()
         configureGetButton()
+        NSFetchedResultsController.deleteCacheWithName("Locations")
+        NSFetchedResultsController.deleteCacheWithName("mapLocations")
     }
 
     override func didReceiveMemoryWarning() {
